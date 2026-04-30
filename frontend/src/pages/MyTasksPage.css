@@ -1,0 +1,75 @@
+.tasks-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.tasks-search {
+  max-width: 360px;
+  background: var(--bg-card);
+}
+
+.filter-tabs { display: flex; gap: 4px; flex-wrap: wrap; }
+.filter-tab {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  display: flex; align-items: center; gap: 6px;
+  transition: all 0.15s;
+}
+.filter-tab:hover { color: var(--text); border-color: var(--border-light); }
+.filter-tab.active { background: var(--accent-glow); border-color: var(--accent); color: var(--accent); }
+.filter-count {
+  background: var(--bg-hover);
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.tasks-table {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.table-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 120px 100px 130px;
+  padding: 12px 20px;
+  background: var(--bg-hover);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border);
+}
+.table-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 120px 100px 130px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+  transition: background 0.15s;
+}
+.table-row:last-child { border-bottom: none; }
+.table-row:hover { background: var(--bg-hover); }
+
+.task-cell { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.task-cell-title { font-size: 14px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.task-cell-desc { font-size: 12px; color: var(--text-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.project-link { font-size: 13px; color: var(--accent); }
+.project-link:hover { text-decoration: underline; }
+.due-chip { font-size: 12px; color: var(--text-muted); }
+.due-chip.overdue { color: var(--danger); font-weight: 500; }
+.no-due { color: var(--text-dim); font-size: 13px; }
+
+@media (max-width: 768px) {
+  .table-header { display: none; }
+  .table-row { grid-template-columns: 1fr; gap: 6px; }
+}
