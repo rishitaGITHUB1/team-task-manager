@@ -8,7 +8,10 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://heroic-balance-production-a1a6.up.railway.app',
+  credentials: true
+}));
 app.use(express.json());
 
 // Routes
